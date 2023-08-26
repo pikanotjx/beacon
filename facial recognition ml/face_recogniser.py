@@ -1,9 +1,9 @@
 import cv2
 import pickle##
-#import serial
+import serial
 
 # Setting serial port to COM4 at bard rate of 9600
-#port = serial.Serial('COM4',9600)
+port = serial.Serial('COM3',9600)
 
 video = cv2.VideoCapture(0)
 cascade = cv2.CascadeClassifier("C:/Users/Tristan Sim/OneDrive/Documents/GitHub/sutdwasdoftime/facial recognition ml/haarcascade_frontalface_default.xml")
@@ -18,7 +18,6 @@ with open("C:/Users/Tristan Sim/OneDrive/Documents/GitHub/sutdwasdoftime/facial 
     print(labels)
 
 
-sampleno = 0
 
 while True:
     check,frame = video.read()
@@ -36,6 +35,13 @@ while True:
             print(ID)
             print(labels[ID])
             cv2.putText(frame,labels[ID],(x-10,y-10),cv2.FONT_HERSHEY_COMPLEX ,1, (18,5,255), 2, cv2.LINE_AA )
+    
+        if labels[ID] == "tristan":
+            port.write(b'1')
+        else:
+            port.write(b'0')
+
+
 
 
 
