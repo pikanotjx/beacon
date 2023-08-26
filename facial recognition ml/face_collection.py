@@ -28,4 +28,4 @@ def collect_data(name):
             break
 
 
-collect_data("Jeremy")
+collect_data("Jasmine")
