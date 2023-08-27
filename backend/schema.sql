@@ -4,6 +4,6 @@ DROP TABLE IF EXISTS post;
 CREATE TABLE person (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   personName TEXT NOT NULL,
-  lightPreference TEXT NOT NULL,
+  lightPreference INTEGER NOT NULL,
   lightDescription TEXT NOT NULL
 );
